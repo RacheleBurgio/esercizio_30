@@ -2,6 +2,8 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import { PersonCircle } from 'react-bootstrap-icons'
+import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 function MyNav() {
   return (
@@ -20,7 +22,9 @@ function MyNav() {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
           <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#tv-shows">Serie TV</Nav.Link>
+          <Nav.Link href="#tv-shows" as={Link} to="/">
+            Serie TV
+          </Nav.Link>
           <Nav.Link href="#movies">Film</Nav.Link>
           <Nav.Link href="#new-popular">Nuovi e Popolari</Nav.Link>
           <Nav.Link href="#my-list">La Mia Lista</Nav.Link>
@@ -35,7 +39,9 @@ function MyNav() {
 
         <Nav className="me-3">
           <NavDropdown id="basic-nav-dropdown" align="end">
-            <NavDropdown.Item href="#profile">Profilo</NavDropdown.Item>
+            <NavDropdown.Item href="#profile" as={Link} to="/EditProfile">
+              Profilo
+            </NavDropdown.Item>
             <NavDropdown.Item href="#settings">Impostazioni</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="#logout">Esci</NavDropdown.Item>
